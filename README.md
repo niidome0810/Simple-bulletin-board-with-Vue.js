@@ -1,6 +1,12 @@
-# board_vue
+# firebaseのデータベースを使った掲示板アプリ
 
-> A Vue.js project
+参考サイト
+https://qiita.com/jiroshin/items/e6e3c06a3e41515114ee
+
+ざっくりとfirebaseとVue.jsの動かし方を理解するためにサイト模写
+
+## 課題点
+今度はサイトの模写ではなく自分でオリジナルアプリを作りたい
 
 ## Build Setup
 
