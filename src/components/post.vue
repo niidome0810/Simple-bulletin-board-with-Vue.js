@@ -4,7 +4,7 @@
     <h2>みんなの投稿</h2>
     <b-button v-on:click='show_all_card' variant="outline-primary">ぜんぶ</b-button>
     <b-button v-on:click='show_news_card' variant="outline-primary" style='margin:0px 10px;'>ニュース</b-button>
-    <b-button v-on:click='show_shopping_card' variant="outline-primary">勉強</b-button>
+    <b-button v-on:click='show_study_card' variant="outline-primary">勉強</b-button>
     <transition-group name='news-card-transition'>
       <b-card
         tag="article"
@@ -21,15 +21,15 @@
         </b-card-text>
       </b-card>
     </transition-group>
-    <transition-group name='shopping-card-transition'>
+    <transition-group name='study-card-transition'>
     <b-card
         tag="article"
         style="max-width: 20rem;"
         class="post-card"
         v-for='post in posts'
         v-bind:key="post.id"
-        v-if='post.cont_type=="shopping"'
-        v-show='card_show_shopping'
+        v-if='post.cont_type=="study"'
+        v-show='card_show_study'
       >
         <b-card-text>
           <p style='font-size:80%;color:grey;'>{{post.name}}</p>
@@ -49,7 +49,7 @@ export default {
     return {
       posts: [],
       card_show_news: true,
-      card_show_shopping: true,
+      card_show_study: true,
     }
   },
   created:
@@ -73,14 +73,14 @@ export default {
   methods: {
     show_all_card: function() {
       this.card_show_news = true;
-      this.card_show_shopping = true;
+      this.card_show_study = true;
     },
     show_news_card: function() {
       this.card_show_news = true;
-      this.card_show_shopping = false;
+      this.card_show_study = false;
     },
-    show_shopping_card: function() {
-      this.card_show_shopping = true;
+    show_study_card: function() {
+      this.card_show_study = true;
       this.card_show_news = false;
     }
   }
@@ -104,14 +104,14 @@ export default {
   transform: translateX(70px);
 }
 
-.shopping-card-transition-enter-active, .shopping-card-transition-leave-active {
+.study-card-transition-enter-active, .study-card-transition-leave-active {
   transition: opacity 1s, transform 1s;
 }
-.shopping-card-transition-enter {
+.study-card-transition-enter {
   opacity: 0;
   transform: translateX(-70px);
 }
-.shopping-card-transition-leave-to {
+.study-card-transition-leave-to {
   opacity: 0;
   transform: translateX(70px);
 }

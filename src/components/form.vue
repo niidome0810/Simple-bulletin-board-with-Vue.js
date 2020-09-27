@@ -9,9 +9,6 @@
     </transition>
     <b-card
       title="今日あったこと"
-      img-src=""
-      img-alt="Image"
-      img-top
       tag="article"
       style="max-width: 20rem;"
       id="form-card"
@@ -76,7 +73,7 @@ export default {
       cont_type: 'news',
       cont: '',
     },
-    cont_types: [{ text: 'みんなに知らせたい！', value: 'news'}, { text: '頑張ったことと！', value: 'shopping'}],
+    cont_types: [{ text: 'みんなに知らせたい！', value: 'news'}, { text: '頑張ったことと！', value: 'study'}],
     id_last: '0',
     post_message: false,
     post_validation: false,
